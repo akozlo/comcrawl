@@ -41,7 +41,7 @@ def download_single_result(result: Result) -> Result:
 
     raw_data: bytes = unzipped_file.read()
     try:
-        data: str = raw_data.decode("utf-8")
+        data: str = raw_data.decode("utf-8", "ignore")
     except UnicodeDecodeError:
         print(f"Warning: Could not extract file downloaded from {url}")
         data = ""
